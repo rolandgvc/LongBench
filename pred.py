@@ -69,7 +69,7 @@ def extract_answer(response):
 
 def get_pred(data, args, fout):
     model = args.model
-    if "gpt" in model or "o1" in model:
+    if "gpt" in model or "o1" in model or "grok" in model:
         tokenizer = tiktoken.encoding_for_model("gpt-4o-2024-08-06")
     else:
         tokenizer = AutoTokenizer.from_pretrained(model_map[model], trust_remote_code=True)
